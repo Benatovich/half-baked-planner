@@ -24,6 +24,8 @@ export default function Entry() {
         <p>Due: {entry?.date}</p>
         <p>{entry?.content}</p>
       </article>
+      <button className={styles.editButton}>UPDATE</button>
+      <button className={styles.deleteButton}>DELETE</button>
     </>
   );
 }
