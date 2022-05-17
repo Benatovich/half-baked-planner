@@ -2,3 +2,7 @@
   color: var(--dark);
   filter: brightness(4);
 }
+
+.container {
+  display: flex
+}
