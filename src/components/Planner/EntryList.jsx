@@ -4,12 +4,18 @@ import styles from './EntryList.css';
 
 export default function Entries() {
   // TODO: Replace with the entries stored in PlannerContext
-  const { entries } = useEntries();
+  const { entries, deleteEntry } = useEntries();
 
   return (
     <ul className={styles.list}>
       {entries.map(({ id, title, date }) => (
-        <Entry key={id} id={id} title={title} date={date} />
+        <Entry 
+          key={id} 
+          id={id} 
+          title={title} 
+          date={date}
+          deleteEntry={deleteEntry}
+        />
       ))}
     </ul>
   );

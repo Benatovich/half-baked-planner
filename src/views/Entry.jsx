@@ -8,7 +8,7 @@ import styles from './Entry.css';
 export default function Entry() {
   const { id } = useParams();
   const [entry, setEntry] = useState({});
-  const { entries, getEntry } = useEntries();
+  const { entries, getEntry, deleteEntry } = useEntries();
 
   useEffect(() => {
     setEntry(getEntry(id));
@@ -24,8 +24,14 @@ export default function Entry() {
         <p>Due: {entry?.date}</p>
         <p>{entry?.content}</p>
       </article>
-      <button className={styles.editButton}>UPDATE</button>
-      <button className={styles.deleteButton}>DELETE</button>
+      <button className={styles.editButton}>
+        UPDATE
+      </button>
+      <button 
+        className={styles.deleteButton}
+        onClick={() => onDelete()}>
+        DELETE
+      </button>
     </>
   );
 }
